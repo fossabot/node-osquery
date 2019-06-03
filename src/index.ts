@@ -1,5 +1,6 @@
 import { spawn } from 'child_process';
 import { join } from 'path';
+import { IUsers } from './interfaces';
 
 export class OSQuery {
   private path: string;
@@ -66,6 +67,20 @@ export class OSQuery {
           rej({ success: false, data: error });
         }
       });
+    });
+  }
+
+  /**
+   * Executes the users query
+   *
+   * @returns {Promise<IUsers>}
+   * @memberof OSQuery
+   */
+  public users(): Promise<IUsers> {
+    return new Promise<IUsers>((resolve, reject) => {
+      this.query('select * from users;')
+        .then(resolve)
+        .catch(reject);
     });
   }
 }
