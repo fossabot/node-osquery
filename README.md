@@ -6,7 +6,7 @@
 
 ------
 
-**node-osquery** is a robust and easy to use wrapper for [osquery](https://osquery.io/s) by facebook.
+**node-osquery** is a robust and easy to use wrapper for [osquery](https://osquery.io/) by facebook.
 
 ## Install
 
