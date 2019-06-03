@@ -9,7 +9,9 @@ import {
   IALFExplicitAuths,
   IALFServices,
   IAppCompatShims,
+  IApps,
   IAppSchemes,
+  IAPTSources,
   ICPUID,
   IUsers,
 } from './interfaces';
@@ -252,6 +254,34 @@ export class OSQuery {
   public appcompat_shims(): Promise<IAppCompatShims> {
     return new Promise<IAppCompatShims>((resolve, reject) => {
       this.query('select * from appcompat_shims;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * OS X applications installed in known search paths (e.g., /Applications).
+   *
+   * @returns {Promise<IApps>}
+   * @memberof OSQuery
+   */
+  public apps(): Promise<IApps> {
+    return new Promise<IApps>((resolve, reject) => {
+      this.query('select * from apps;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Current list of APT repositories or software channels
+   *
+   * @returns {Promise<IAPTSources>}
+   * @memberof OSQuery
+   */
+  public apt_sources(): Promise<IAPTSources> {
+    return new Promise<IAPTSources>((resolve, reject) => {
+      this.query('select * from apt_sources;')
         .then(resolve)
         .catch(reject);
     });

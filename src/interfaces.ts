@@ -185,3 +185,73 @@ export interface IAppCompatShims {
   success: boolean;
   data: [IAppCompatShimsData];
 }
+
+export interface IAppsData {
+  // Name of the Name.app folder
+  name: string;
+  // Absolute and full Name.app path
+  path: string;
+  // Info properties CFBundleExecutable label
+  bundle_executable: string;
+  // Info properties CFBundleIdentifier label
+  bundle_identifier: string;
+  // Info properties CFBundleName label
+  bundle_name: string;
+  // Info properties CFBundleShortVersionString label
+  bundle_short_version: string;
+  // Info properties CFBundleVersion label
+  bundle_version: string;
+  // Info properties CFBundlePackageType label
+  bundle_package_type: string;
+  // Application-set environment variables
+  environment: string;
+  // Does the app identify as a background agent
+  element: string;
+  // Info properties DTCompiler label
+  compiler: string;
+  // Info properties CFBundleDevelopmentRegion label
+  development_region: string;
+  // Info properties CFBundleDisplayName label
+  display_name: string;
+  // Info properties CFBundleGetInfoString label
+  info_string: string;
+  // Minimum version of OS X required for the app to run
+  minimum_system_version: string;
+  // The UTI that categorizes the app for the App Store
+  category: string;
+  // Info properties NSAppleScriptEnabled label
+  applescript_enabled: string;
+  // Info properties NSHumanReadableCopyright label
+  copyright: string;
+  // The time that the app was last used
+  last_opened_time: number;
+}
+
+export interface IApps {
+  success: boolean;
+  data: [IAppsData];
+}
+
+export interface IAPTSourcesData {
+  // Repository name
+  name: string;
+  // Source file
+  source: string;
+  // Repository base URI
+  base_uri: string;
+  // Release name
+  release: string;
+  // Repository source version
+  version: string;
+  // Repository maintainer
+  maintainer: string;
+  // Repository components
+  components: string;
+  // Repository architectures
+  architectures: string;
+}
+
+export interface IAPTSources {
+  success: boolean;
+  data: [IAPTSourcesData];
+}
