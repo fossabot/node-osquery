@@ -255,3 +255,118 @@ export interface IAPTSources {
   success: boolean;
   data: [IAPTSourcesData];
 }
+
+export interface IARPCacheData {
+  // IPv4 address target
+  address: string;
+  // MAC address of broadcasted address
+  mac: string;
+  // Interface of the network for the MAC
+  interface: string;
+  // 1 for true, 0 for false
+  permanent: string;
+}
+export interface IARPCache {
+  success: boolean;
+  data: [IARPCacheData];
+}
+
+export interface IASLData {
+  // Unix timestamp. Set automatically
+  time: number;
+  // Nanosecond time.
+  time_nano_sec: number;
+  // Sender's address (set by the server).
+  host: string;
+
+  // Sender's identification string. Default is process name.
+  sender: string;
+  // 	Sender's facility. Default is 'user'.
+  facility: string;
+  // Sending process ID encoded as a string. Set automatically.
+  pid: number;
+  // GID that sent the log message (set by the server).
+  gid: number;
+  // UID that sent the log message (set by the server).
+  uid: number;
+  // Log level number. See levels in asl.h.
+  level: number;
+  // 	Message
+  message: string;
+  // Reference PID for messages proxied by launchd
+  ref_pid: number;
+  // Reference process for messages proxied by launchd
+  ref_proc: string;
+  // Extra columns, in JSON format. Queries against this column are performed
+  // entirely in SQLite, so do not benefit from efficient querying via asl.h.
+  extra: string;
+}
+
+export interface IASL {
+  success: boolean;
+  data: [IASLData];
+}
+
+export interface IUlimitInfoData {
+  // System resource to be limited
+  type: string;
+  // Current limit value
+  soft_limit: string;
+  // Maximum limit value
+  hard_limit: string;
+}
+
+export interface IUlimitInfo {
+  success: boolean;
+  data: [IUlimitInfoData];
+}
+
+export interface IUptimeData {
+  // Days of uptime
+  days: number;
+  // Hours of uptime
+  hours: number;
+  // Minutes of uptime
+  minutes: number;
+  // Seconds of uptime
+  seconds: number;
+  // Total uptime seconds
+  total_seconds: number;
+}
+
+export interface IUptime {
+  success: boolean;
+  data: [IUptimeData];
+}
+
+export interface IUsbDevicesData {
+  // USB Device used address
+  usb_address: number;
+  // USB Device used port
+  usb_port: number;
+  // USB Device vendor string
+  vendor: string;
+  // Hex encoded USB Device vendor identifier
+  vendor_id: string;
+  // USB Device version number
+  version: string;
+  // USB Device model string
+  model: string;
+  // Hex encoded USB Device model identifier
+  model_id: string;
+  // USB Device serial connection
+  serial: string;
+  // USB Device class
+  class: string;
+  // USB Device subclass
+  subclass: string;
+  // USB Device protocol
+  protocol: string;
+  // 1 If USB device is removable else 0
+  removable: number;
+}
+
+export interface IUsbDevices {
+  success: boolean;
+  data: [IUsbDevicesData];
+}

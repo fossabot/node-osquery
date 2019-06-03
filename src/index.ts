@@ -12,7 +12,12 @@ import {
   IApps,
   IAppSchemes,
   IAPTSources,
+  IARPCache,
+  IASL,
   ICPUID,
+  IUlimitInfo,
+  IUptime,
+  IUsbDevices,
   IUsers,
 } from './interfaces';
 
@@ -100,20 +105,6 @@ export class OSQuery {
           reject({ success: false, data: error });
         }
       });
-    });
-  }
-
-  /**
-   * Executes the users query
-   *
-   * @returns {Promise<IUsers>}
-   * @memberof OSQuery
-   */
-  public users(): Promise<IUsers> {
-    return new Promise<IUsers>((resolve, reject) => {
-      this.query('select * from users;')
-        .then(resolve)
-        .catch(reject);
     });
   }
 
@@ -282,6 +273,90 @@ export class OSQuery {
   public apt_sources(): Promise<IAPTSources> {
     return new Promise<IAPTSources>((resolve, reject) => {
       this.query('select * from apt_sources;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Address resolution cache, both static and dynamic (from ARP, NDP).
+   *
+   * @returns {Promise<IARPCache>}
+   * @memberof OSQuery
+   */
+  public arp_cache(): Promise<IARPCache> {
+    return new Promise<IARPCache>((resolve, reject) => {
+      this.query('select * from arp_cache;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Queries the Apple System Log data structure for system events
+   *
+   * @returns {Promise<IASL>}
+   * @memberof OSQuery
+   */
+  public asl(): Promise<IASL> {
+    return new Promise<IASL>((resolve, reject) => {
+      this.query('select * from asl;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * System resource usage limits.
+   *
+   * @returns {Promise<IUlimitInfo>}
+   * @memberof OSQuery
+   */
+  public ulimit_info(): Promise<IUlimitInfo> {
+    return new Promise<IUlimitInfo>((resolve, reject) => {
+      this.query('select * from ulimit_info;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Track time passed since last boot.
+   *
+   * @returns {Promise<IUptime>}
+   * @memberof OSQuery
+   */
+  public uptime(): Promise<IUptime> {
+    return new Promise<IUptime>((resolve, reject) => {
+      this.query('select * from uptime;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * USB devices that are actively plugged into the host system
+   *
+   * @returns {Promise<IUsbDevices>}
+   * @memberof OSQuery
+   */
+  public usb_devices(): Promise<IUsbDevices> {
+    return new Promise<IUsbDevices>((resolve, reject) => {
+      this.query('select * from usb_devices;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Executes the users query
+   *
+   * @returns {Promise<IUsers>}
+   * @memberof OSQuery
+   */
+  public users(): Promise<IUsers> {
+    return new Promise<IUsers>((resolve, reject) => {
+      this.query('select * from users;')
         .then(resolve)
         .catch(reject);
     });
