@@ -36,7 +36,7 @@ export class OSQuery {
    */
   public query(sql: string): Promise<object> {
     // returning the promise
-    return new Promise<object>((res, rej) => {
+    return new Promise<object>((resolve, reject) => {
       // initializing the variables for data
       let data: string = '';
       let error: string = '';
@@ -60,11 +60,30 @@ export class OSQuery {
         // if exit successfully
         if (code === 0) {
           // resolve the promise
-          // tslint:disable-next-line: no-unsafe-any
-          res({ success: true, data: JSON.parse(data) });
+          // tslint:disable-next-line: variable-name, no-unsafe-any
+          const parsedData = JSON.parse(data);
+
+          // getting all the stderr
+          const errors: string[] = error.split('\n');
+
+          // getting the last one error
+          const tblErr = errors[errors.length - 2];
+
+          // check if no query run
+          if (
+            // tslint:disable-next-line: no-unsafe-any
+            parsedData.length === 0 &&
+            // check for no table found
+            /^Error: no such table: .*/.test(tblErr)
+          ) {
+            // reject the promise
+            reject({ success: false, data: tblErr });
+          }
+          // resolve the promise
+          resolve({ success: true, data: parsedData });
         } else {
           // reject the promise
-          rej({ success: false, data: error });
+          reject({ success: false, data: error });
         }
       });
     });
