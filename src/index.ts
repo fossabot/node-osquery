@@ -1,6 +1,18 @@
 import { spawn } from 'child_process';
 import { join } from 'path';
-import { IUsers } from './interfaces';
+import {
+  IAccountPolicyData,
+  IACPITables,
+  IADConfig,
+  IALF,
+  IALFException,
+  IALFExplicitAuths,
+  IALFServices,
+  ICPUID,
+  IUsers,
+  IAppSchemes,
+  IAppCompatShims,
+} from './interfaces';
 
 export class OSQuery {
   private path: string;
@@ -98,6 +110,148 @@ export class OSQuery {
   public users(): Promise<IUsers> {
     return new Promise<IUsers>((resolve, reject) => {
       this.query('select * from users;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Useful CPU features from the cpuid ASM call
+   *
+   * @returns {Promise<ICPUID>}
+   * @memberof OSQuery
+   */
+  public cpuid(): Promise<ICPUID> {
+    return new Promise<ICPUID>((resolve, reject) => {
+      this.query('select * from cpuid')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Additional OS X user account data from the AccountPolicy section of OpenDirectory
+   *
+   * @returns {Promise<IAccountPolicyData>}
+   * @memberof OSQuery
+   */
+  public account_policy_data(): Promise<IAccountPolicyData> {
+    return new Promise<IAccountPolicyData>((resolve, reject) => {
+      this.query('select * from account_policy_data;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Firmware ACPI functional table common metadata and content
+   *
+   * @returns {Promise<IACPITables>}
+   * @memberof OSQuery
+   */
+  public acpi_tables(): Promise<IACPITables> {
+    return new Promise<IACPITables>((resolve, reject) => {
+      this.query('select * from acpi_tables;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * OS X Active Directory configuration.
+   *
+   * @returns {Promise<IADConfig>}
+   * @memberof OSQuery
+   */
+  public ad_config(): Promise<IADConfig> {
+    return new Promise<IADConfig>((resolve, reject) => {
+      this.query('select * from ad_config;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * OS X application layer firewall (ALF) service details
+   *
+   * @returns {Promise<IALF>}
+   * @memberof OSQuery
+   */
+  public alf(): Promise<IALF> {
+    return new Promise<IALF>((resolve, reject) => {
+      this.query('select * from alf;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * OS X application layer firewall (ALF) service exceptions
+   *
+   * @returns {Promise<IALFException>}
+   * @memberof OSQuery
+   */
+  public alf_exceptions(): Promise<IALFException> {
+    return new Promise<IALFException>((resolve, reject) => {
+      this.query('select * from alf_exceptions;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * ALF services explicitly allowed to perform networking
+   *
+   * @returns {Promise<IALFExplicitAuths>}
+   * @memberof OSQuery
+   */
+  public alf_explicit_auths(): Promise<IALFExplicitAuths> {
+    return new Promise<IALFExplicitAuths>((resolve, reject) => {
+      this.query('select * from alf_explicit_auths;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * OS X application layer firewall (Firewall) services
+   *
+   * @returns {Promise<IALFServices>}
+   * @memberof OSQuery
+   */
+  public alf_services(): Promise<IALFServices> {
+    return new Promise<IALFServices>((resolve, reject) => {
+      this.query('select * from alf_services;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * OS X application schemes and handlers (e.g., http, file, mailto)
+   *
+   * @returns {Promise<IAppSchemes>}
+   * @memberof OSQuery
+   */
+  public app_schemes(): Promise<IAppSchemes> {
+    return new Promise<IAppSchemes>((resolve, reject) => {
+      this.query('select * from app_schemes;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Application Compatibility shims are a way to persist malware. This table presents
+   * the AppCompat Shim information from the registry in a nice format.
+   * See http://files.brucon.org/2015/Tomczak_and_Ballenthin_Shims_for_the_Win.pdf for more details.
+   *
+   * @returns {Promise<IAppCompatShims>}
+   * @memberof OSQuery
+   */
+  public appcompat_shims(): Promise<IAppCompatShims> {
+    return new Promise<IAppCompatShims>((resolve, reject) => {
+      this.query('select * from appcompat_shims;')
         .then(resolve)
         .catch(reject);
     });
