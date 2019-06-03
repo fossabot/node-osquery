@@ -8,10 +8,10 @@ import {
   IALFException,
   IALFExplicitAuths,
   IALFServices,
+  IAppCompatShims,
+  IAppSchemes,
   ICPUID,
   IUsers,
-  IAppSchemes,
-  IAppCompatShims,
 } from './interfaces';
 
 export class OSQuery {
