@@ -6,15 +6,16 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && grunt",
+    "lint": "tslint --fix src/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/4ir/node-oqueryi.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["4ir", "4 ir research labs", "osquery", "facebook", "interface", "wrapper"],
+  "author": "4 IR Research Labs <support@4iresearch.com>",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/4ir/node-oqueryi/issues"
   },
@@ -24,6 +25,7 @@
     "grunt": "^1.0.4",
     "grunt-ts": "^6.0.0-beta.22",
     "rimraf": "^2.6.3",
+    "tslint": "^5.17.0",
     "typescript": "^3.5.1"
   }
 }
