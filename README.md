@@ -1,7 +1,7 @@
-# node-osquery ![GitHub package.json version](https://img.shields.io/github/package-json/v/4ir/node-osquery.svg?style=popout-square)![](https://img.shields.io/github/license/4ir/node-osquery.svg?style=popout-square)![s](https://img.shields.io/github/issues-raw/4ir/node-osquery.svg?style=popout-square)![](https://img.shields.io/github/issues-pr/4ir/node-osquery.svg?style=popout-square)
+# node-osquery ![GitHub package.json version](https://img.shields.io/github/package-json/v/4ir/node-osquery.svg?style=popout-square) ![](https://img.shields.io/github/license/4ir/node-osquery.svg?style=popout-square) ![s](https://img.shields.io/github/issues-raw/4ir/node-osquery.svg?style=popout-square) ![](https://img.shields.io/github/issues-pr/4ir/node-osquery.svg?style=popout-square)
 
 <center>
-<img src="https://img.shields.io/bundlephobia/min/@4ir/osquery.svg?style=popout-square"><img src="https://img.shields.io/github/repo-size/4ir/node-osquery.svg?style=popout-square"><img src="https://img.shields.io/github/downloads/4ir/node-osquery/total.svg?style=popout-square"><img src="https://img.shields.io/npm/dm/@4ir/osquery.svg?style=popout-square"><img src="">
+<img src="https://img.shields.io/bundlephobia/min/@4ir/osquery.svg?style=popout-square"> <img src="https://img.shields.io/github/repo-size/4ir/node-osquery.svg?style=popout-square"> <img src="https://img.shields.io/github/downloads/4ir/node-osquery/total.svg?style=popout-square"> <img src="https://img.shields.io/npm/dm/@4ir/osquery.svg?style=popout-square">
 </center>
 
 ------
