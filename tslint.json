@@ -9,10 +9,7 @@
     "no-reference": false,
     "no-reference-import": false,
     "no-unused-expression": true,
-    "no-unused-variable": true,
-    "no-empty": true,
-    "no-unsafe-any": true,
-    "no-default-export": false
+    "no-empty": true
   },
   "rulesDirectory": []
 }
