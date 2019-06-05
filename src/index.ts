@@ -21,13 +21,13 @@ import {
   IUserGroups,
   IUsers,
   IUserSSHKeys,
+  IVideoInfo,
+  IVirtualMemoryInfo,
   IXProtectEntries,
   IXProtectMeta,
   IXProtectReports,
   IYara,
   IYumSources,
-  IVideoInfo,
-  IVirtualMemoryInfo,
 } from './interfaces';
 
 export class OSQuery {
@@ -420,7 +420,6 @@ export class OSQuery {
         .catch(reject);
     });
   }
-
   /**
    * Database of the machine's XProtect signatures
    *
