@@ -21,6 +21,8 @@ import {
   IUserGroups,
   IUsers,
   IUserSSHKeys,
+  IYara,
+  IYumSources,
 } from './interfaces';
 
 export class OSQuery {
@@ -373,7 +375,7 @@ export class OSQuery {
   }
 
   /**
-   * Executes the users query
+   * Local user accounts (including domain accounts that have logged on locally (Windows))
    *
    * @returns {Promise<IUsers>}
    * @memberof OSQuery
@@ -381,6 +383,34 @@ export class OSQuery {
   public users(): Promise<IUsers> {
     return new Promise<IUsers>((resolve, reject) => {
       this.query('select * from users;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Track YARA matches for files or PIDs
+   *
+   * @returns {Promise<IYara>}
+   * @memberof OSQuery
+   */
+  public yara(): Promise<IYara> {
+    return new Promise<IYara>((resolve, reject) => {
+      this.query('select * from yara;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Current list of Yum repositories or software channels.
+   *
+   * @returns {Promise<IYumSources>}
+   * @memberof OSQuery
+   */
+  public yum_sources(): Promise<IYumSources> {
+    return new Promise<IYumSources>((resolve, reject) => {
+      this.query('select * from yum_sources;')
         .then(resolve)
         .catch(reject);
     });
