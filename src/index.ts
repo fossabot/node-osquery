@@ -21,6 +21,9 @@ import {
   IUserGroups,
   IUsers,
   IUserSSHKeys,
+  IXProtectEntries,
+  IXProtectMeta,
+  IXProtectReports,
   IYara,
   IYumSources,
 } from './interfaces';
@@ -383,6 +386,48 @@ export class OSQuery {
   public users(): Promise<IUsers> {
     return new Promise<IUsers>((resolve, reject) => {
       this.query('select * from users;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Database of the machine's XProtect signatures
+   *
+   * @returns {Promise<IXProtectEntries>}
+   * @memberof OSQuery
+   */
+  public xprotect_entries(): Promise<IXProtectEntries> {
+    return new Promise<IXProtectEntries>((resolve, reject) => {
+      this.query('select * from xprotect_entries;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Database of the machine's XProtect browser-related signatures
+   *
+   * @returns {Promise<IXProtectMeta>}
+   * @memberof OSQuery
+   */
+  public xprotect_meta(): Promise<IXProtectMeta> {
+    return new Promise<IXProtectMeta>((resolve, reject) => {
+      this.query('select * from xprotect_meta;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Database of XProtect matches (if user generated/sent an XProtect report)
+   *
+   * @returns {Promise<IXProtectReports>}
+   * @memberof OSQuery
+   */
+  public xprotext_reports(): Promise<IXProtectReports> {
+    return new Promise<IXProtectReports>((resolve, reject) => {
+      this.query('select * from xprotext_reports;')
         .then(resolve)
         .catch(reject);
     });

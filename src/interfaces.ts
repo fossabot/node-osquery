@@ -442,3 +442,55 @@ export interface IYumSources {
   success: boolean;
   data: [IYumSourcesData];
 }
+
+export interface IXProtectEntriesData {
+  // Description of XProtected malware
+  name: string;
+  // Launch services content type
+  launch_type: string;
+  // XProtect identity (SHA1) of content
+  identity: string;
+  // Use this file name to match
+  filename: string;
+  // Use this file type to match
+  filetype: string;
+  // Match any of the identities/patterns for this XProtect name
+  optional: number;
+  // Uses a match pattern instead of identity
+  uses_pattern: number;
+}
+
+export interface IXProtectEntries {
+  success: boolean;
+  data: [IXProtectEntriesData];
+}
+
+export interface IXProtectMetaData {
+  // Browser plugin or extension identifier
+  identifier: string;
+  // Either plugin or extension
+  type: string;
+  // Developer identity (SHA1) of extension
+  developer_id: string;
+  // The minimum allowed plugin version.
+  min_version: string;
+}
+
+export interface IXProtectMeta {
+  success: boolean;
+  data: [IXProtectMetaData];
+}
+
+export interface IXProtectReportsData {
+  // Description of XProtected malware
+  name: string;
+  // Action taken by user after prompted
+  user_action: string;
+  // Quarantine alert time
+  time: string;
+}
+
+export interface IXProtectReports {
+  success: boolean;
+  data: [IXProtectReportsData];
+}
