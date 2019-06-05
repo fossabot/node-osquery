@@ -26,6 +26,8 @@ import {
   IXProtectReports,
   IYara,
   IYumSources,
+  IVideoInfo,
+  IVirtualMemoryInfo,
 } from './interfaces';
 
 export class OSQuery {
@@ -386,6 +388,34 @@ export class OSQuery {
   public users(): Promise<IUsers> {
     return new Promise<IUsers>((resolve, reject) => {
       this.query('select * from users;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Retrieve video card information of the machine
+   *
+   * @returns {Promise<IVideoInfo>}
+   * @memberof OSQuery
+   */
+  public video_info(): Promise<IVideoInfo> {
+    return new Promise<IVideoInfo>((resolve, reject) => {
+      this.query('select * from video_info;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Darwin Virtual Memory statistics.
+   *
+   * @returns {Promise<IVirtualMemoryInfo>}
+   * @memberof OSQuery
+   */
+  public virtual_memory_info(): Promise<IVirtualMemoryInfo> {
+    return new Promise<IVirtualMemoryInfo>((resolve, reject) => {
+      this.query('select * from virtual_memory_info;')
         .then(resolve)
         .catch(reject);
     });

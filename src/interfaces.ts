@@ -494,3 +494,79 @@ export interface IXProtectReports {
   success: boolean;
   data: [IXProtectReportsData];
 }
+
+export interface IVideoInfoData {
+  // The amount of bits per pixel to represent color.
+  color_depth: number;
+  // The driver of the device.
+  driver: string;
+  // The date listed on the installed driver.
+  driver_date: string;
+  // The version of the installed driver.
+  driver_version: string;
+  // The manufaturer of the gpu.
+  manufacturer: string;
+  // The model of the gpu.
+  model: string;
+  // The series of the gpu.
+  series: string;
+  // The current resolution of the display.
+  video_mode: string;
+}
+
+export interface IVideoInfo {
+  success: boolean;
+  data: [IVideoInfoData];
+}
+
+export interface IVirtualMemoryInfoData {
+  // Total number of free pages.
+  free: number;
+  // Total number of active pages.
+  active: number;
+  // Total number of inactive pages.
+  inactive: number;
+  // Total number of speculative pages.
+  speculative: number;
+  // Total number of throttled pages.
+  throttled: number;
+  // Total number of wired down pages.
+  wired: number;
+  // Total number of purgeable pages.
+  purgeable: number;
+  // Total number of calls to vm_faults.
+  faults: number;
+  // Total number of copy-on-write pages.
+  copy: number;
+  // Total number of zero filled pages.
+  zero_fill: number;
+  // Total number of reactivated pages.
+  reactivated: number;
+  // Total number of purged pages.
+  purged: number;
+  // Total number of file backed pages.
+  file_backed: number;
+  // Total number of anonymous pages.
+  anonymous: number;
+  // Total number of uncompressed pages.
+  uncompressed: number;
+  // The number of pages used to store compressed VM pages.
+  compressor: number;
+  // The total number of pages that have been decompressed by the VM compressor.
+  decompressed: number;
+  // The total number of pages that have been compressed by the VM compressor.
+  compressed: number;
+  // The total number of requests for pages from a pager.
+  page_ins: number;
+  // Total number of pages paged out.
+  page_outs: number;
+  // The total number of compressed pages that have been swapped out to disk.
+  swap_ins: number;
+  // The total number of compressed pages that have been swapped back in from disk.
+  swap_outs: number;
+}
+
+export interface IVirtualMemoryInfo {
+  success: boolean;
+  data: [IVirtualMemoryInfoData];
+}
