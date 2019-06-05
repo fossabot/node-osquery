@@ -7,6 +7,12 @@
 ------
 
 **node-osquery** is a robust and easy to use wrapper for [osquery](https://osquery.io/) by facebook.
+## Features
+
+1. High level interface to run the query, [see this](#how-to-use)
+2. Custom query executor for flexibility and filtered
+3. Typing making developers not to goto documentation again and again
+4. Robust and Fast
 
 ## Install
 
