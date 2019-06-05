@@ -8,6 +8,7 @@ module.exports = grunt => {
       },
 
       options: {
+	removeComments: false,
         declaration: true,
         rootDir: "src"
       }

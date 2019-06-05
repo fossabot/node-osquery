@@ -35,8 +35,6 @@ export class OSQuery {
 
   /**
    * Creates an instance of OSQuery.
-   * @param {string} [path='']
-   * @memberof OSQuery
    */
   constructor(path: string = '') {
     // check if path is not passed
@@ -58,9 +56,6 @@ export class OSQuery {
   /**
    * Executes the raw sql query
    *
-   * @param {string} sql
-   * @returns {Promise<object>}
-   * @memberof OSQuery
    */
   public query(sql: string): Promise<object> {
     // returning the promise
@@ -120,8 +115,6 @@ export class OSQuery {
   /**
    * Useful CPU features from the cpuid ASM call
    *
-   * @returns {Promise<ICPUID>}
-   * @memberof OSQuery
    */
   public cpuid(): Promise<ICPUID> {
     return new Promise<ICPUID>((resolve, reject) => {
@@ -134,8 +127,6 @@ export class OSQuery {
   /**
    * Additional OS X user account data from the AccountPolicy section of OpenDirectory
    *
-   * @returns {Promise<IAccountPolicyData>}
-   * @memberof OSQuery
    */
   public account_policy_data(): Promise<IAccountPolicyData> {
     return new Promise<IAccountPolicyData>((resolve, reject) => {
@@ -148,8 +139,6 @@ export class OSQuery {
   /**
    * Firmware ACPI functional table common metadata and content
    *
-   * @returns {Promise<IACPITables>}
-   * @memberof OSQuery
    */
   public acpi_tables(): Promise<IACPITables> {
     return new Promise<IACPITables>((resolve, reject) => {
@@ -162,8 +151,6 @@ export class OSQuery {
   /**
    * OS X Active Directory configuration.
    *
-   * @returns {Promise<IADConfig>}
-   * @memberof OSQuery
    */
   public ad_config(): Promise<IADConfig> {
     return new Promise<IADConfig>((resolve, reject) => {
@@ -176,8 +163,6 @@ export class OSQuery {
   /**
    * OS X application layer firewall (ALF) service details
    *
-   * @returns {Promise<IALF>}
-   * @memberof OSQuery
    */
   public alf(): Promise<IALF> {
     return new Promise<IALF>((resolve, reject) => {
@@ -190,8 +175,6 @@ export class OSQuery {
   /**
    * OS X application layer firewall (ALF) service exceptions
    *
-   * @returns {Promise<IALFException>}
-   * @memberof OSQuery
    */
   public alf_exceptions(): Promise<IALFException> {
     return new Promise<IALFException>((resolve, reject) => {
@@ -204,8 +187,6 @@ export class OSQuery {
   /**
    * ALF services explicitly allowed to perform networking
    *
-   * @returns {Promise<IALFExplicitAuths>}
-   * @memberof OSQuery
    */
   public alf_explicit_auths(): Promise<IALFExplicitAuths> {
     return new Promise<IALFExplicitAuths>((resolve, reject) => {
@@ -218,8 +199,6 @@ export class OSQuery {
   /**
    * OS X application layer firewall (Firewall) services
    *
-   * @returns {Promise<IALFServices>}
-   * @memberof OSQuery
    */
   public alf_services(): Promise<IALFServices> {
     return new Promise<IALFServices>((resolve, reject) => {
@@ -232,8 +211,6 @@ export class OSQuery {
   /**
    * OS X application schemes and handlers (e.g., http, file, mailto)
    *
-   * @returns {Promise<IAppSchemes>}
-   * @memberof OSQuery
    */
   public app_schemes(): Promise<IAppSchemes> {
     return new Promise<IAppSchemes>((resolve, reject) => {
@@ -248,8 +225,6 @@ export class OSQuery {
    * the AppCompat Shim information from the registry in a nice format.
    * See http://files.brucon.org/2015/Tomczak_and_Ballenthin_Shims_for_the_Win.pdf for more details.
    *
-   * @returns {Promise<IAppCompatShims>}
-   * @memberof OSQuery
    */
   public appcompat_shims(): Promise<IAppCompatShims> {
     return new Promise<IAppCompatShims>((resolve, reject) => {
@@ -262,8 +237,6 @@ export class OSQuery {
   /**
    * OS X applications installed in known search paths (e.g., /Applications).
    *
-   * @returns {Promise<IApps>}
-   * @memberof OSQuery
    */
   public apps(): Promise<IApps> {
     return new Promise<IApps>((resolve, reject) => {
@@ -276,8 +249,6 @@ export class OSQuery {
   /**
    * Current list of APT repositories or software channels
    *
-   * @returns {Promise<IAPTSources>}
-   * @memberof OSQuery
    */
   public apt_sources(): Promise<IAPTSources> {
     return new Promise<IAPTSources>((resolve, reject) => {
@@ -290,8 +261,6 @@ export class OSQuery {
   /**
    * Address resolution cache, both static and dynamic (from ARP, NDP).
    *
-   * @returns {Promise<IARPCache>}
-   * @memberof OSQuery
    */
   public arp_cache(): Promise<IARPCache> {
     return new Promise<IARPCache>((resolve, reject) => {
@@ -304,8 +273,6 @@ export class OSQuery {
   /**
    * Queries the Apple System Log data structure for system events
    *
-   * @returns {Promise<IASL>}
-   * @memberof OSQuery
    */
   public asl(): Promise<IASL> {
     return new Promise<IASL>((resolve, reject) => {
@@ -318,8 +285,6 @@ export class OSQuery {
   /**
    * System resource usage limits.
    *
-   * @returns {Promise<IUlimitInfo>}
-   * @memberof OSQuery
    */
   public ulimit_info(): Promise<IUlimitInfo> {
     return new Promise<IUlimitInfo>((resolve, reject) => {
@@ -332,8 +297,6 @@ export class OSQuery {
   /**
    * Track time passed since last boot.
    *
-   * @returns {Promise<IUptime>}
-   * @memberof OSQuery
    */
   public uptime(): Promise<IUptime> {
     return new Promise<IUptime>((resolve, reject) => {
@@ -346,8 +309,6 @@ export class OSQuery {
   /**
    * USB devices that are actively plugged into the host system
    *
-   * @returns {Promise<IUsbDevices>}
-   * @memberof OSQuery
    */
   public usb_devices(): Promise<IUsbDevices> {
     return new Promise<IUsbDevices>((resolve, reject) => {
@@ -360,8 +321,6 @@ export class OSQuery {
   /**
    * Local system user group relationships
    *
-   * @returns {Promise<IUserGroups>}
-   * @memberof OSQuery
    */
   public user_groups(): Promise<IUserGroups> {
     return new Promise<IUserGroups>((resolve, reject) => {
@@ -382,8 +341,6 @@ export class OSQuery {
   /**
    * Local user accounts (including domain accounts that have logged on locally (Windows))
    *
-   * @returns {Promise<IUsers>}
-   * @memberof OSQuery
    */
   public users(): Promise<IUsers> {
     return new Promise<IUsers>((resolve, reject) => {
@@ -396,8 +353,6 @@ export class OSQuery {
   /**
    * Retrieve video card information of the machine
    *
-   * @returns {Promise<IVideoInfo>}
-   * @memberof OSQuery
    */
   public video_info(): Promise<IVideoInfo> {
     return new Promise<IVideoInfo>((resolve, reject) => {
@@ -410,8 +365,6 @@ export class OSQuery {
   /**
    * Darwin Virtual Memory statistics.
    *
-   * @returns {Promise<IVirtualMemoryInfo>}
-   * @memberof OSQuery
    */
   public virtual_memory_info(): Promise<IVirtualMemoryInfo> {
     return new Promise<IVirtualMemoryInfo>((resolve, reject) => {
@@ -423,8 +376,6 @@ export class OSQuery {
   /**
    * Database of the machine's XProtect signatures
    *
-   * @returns {Promise<IXProtectEntries>}
-   * @memberof OSQuery
    */
   public xprotect_entries(): Promise<IXProtectEntries> {
     return new Promise<IXProtectEntries>((resolve, reject) => {
@@ -437,8 +388,6 @@ export class OSQuery {
   /**
    * Database of the machine's XProtect browser-related signatures
    *
-   * @returns {Promise<IXProtectMeta>}
-   * @memberof OSQuery
    */
   public xprotect_meta(): Promise<IXProtectMeta> {
     return new Promise<IXProtectMeta>((resolve, reject) => {
@@ -451,8 +400,6 @@ export class OSQuery {
   /**
    * Database of XProtect matches (if user generated/sent an XProtect report)
    *
-   * @returns {Promise<IXProtectReports>}
-   * @memberof OSQuery
    */
   public xprotext_reports(): Promise<IXProtectReports> {
     return new Promise<IXProtectReports>((resolve, reject) => {
@@ -465,8 +412,6 @@ export class OSQuery {
   /**
    * Track YARA matches for files or PIDs
    *
-   * @returns {Promise<IYara>}
-   * @memberof OSQuery
    */
   public yara(): Promise<IYara> {
     return new Promise<IYara>((resolve, reject) => {
@@ -479,8 +424,6 @@ export class OSQuery {
   /**
    * Current list of Yum repositories or software channels.
    *
-   * @returns {Promise<IYumSources>}
-   * @memberof OSQuery
    */
   public yum_sources(): Promise<IYumSources> {
     return new Promise<IYumSources>((resolve, reject) => {
