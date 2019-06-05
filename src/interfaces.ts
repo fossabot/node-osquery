@@ -370,3 +370,28 @@ export interface IUsbDevices {
   success: boolean;
   data: [IUsbDevicesData];
 }
+
+export interface IUserGroupsData {
+  // User ID
+  uid: number;
+  // Group ID
+  gid: number;
+}
+
+export interface IUserGroups {
+  success: boolean;
+  data: [IUserGroupsData];
+}
+
+export interface IUserSSHKeysData {
+  // The local user that owns the key file
+  uid: number;
+  // Path to key file
+  path: string;
+  // 1 if key is encrypted, 0 otherwise
+  encrypted: number;
+}
+export interface IUserSSHKeys {
+  success: boolean;
+  data: [IUserSSHKeysData];
+}

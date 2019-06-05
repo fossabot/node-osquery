@@ -19,6 +19,8 @@ import {
   IUptime,
   IUsbDevices,
   IUsers,
+  IUserGroups,
+  IUserSSHKeys,
 } from './interfaces';
 
 export class OSQuery {
@@ -343,6 +345,28 @@ export class OSQuery {
   public usb_devices(): Promise<IUsbDevices> {
     return new Promise<IUsbDevices>((resolve, reject) => {
       this.query('select * from usb_devices;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Local system user group relationships
+   *
+   * @returns {Promise<IUserGroups>}
+   * @memberof OSQuery
+   */
+  public user_groups(): Promise<IUserGroups> {
+    return new Promise<IUserGroups>((resolve, reject) => {
+      this.query('select * from user_groups;')
+        .then(resolve)
+        .catch(reject);
+    });
+  }
+
+  public user_ssh_keys(): Promise<IUserSSHKeys> {
+    return new Promise<IUserSSHKeys>((resolve, reject) => {
+      this.query('select * from user_ssh_keys;')
         .then(resolve)
         .catch(reject);
     });
