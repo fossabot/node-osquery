@@ -18,8 +18,8 @@ import {
   IUlimitInfo,
   IUptime,
   IUsbDevices,
-  IUsers,
   IUserGroups,
+  IUsers,
   IUserSSHKeys,
 } from './interfaces';
 
