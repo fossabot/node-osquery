@@ -1,4 +1,5 @@
-# node-osquery [UNDER DEVELOPMENT] ![GitHub package.json version](https://img.shields.io/github/package-json/v/4ir/node-osquery.svg?style=popout-square) ![](https://img.shields.io/github/license/4ir/node-osquery.svg?style=popout-square) ![s](https://img.shields.io/github/issues-raw/4ir/node-osquery.svg?style=popout-square) ![](https://img.shields.io/github/issues-pr/4ir/node-osquery.svg?style=popout-square)
+# node-osquery [UNDER DEVELOPMENT] ![GitHub package.json version](https://img.shields.io/github/package-json/v/4ir/node-osquery.svg?style=popout-square) ![](https://img.shields.io/github/license/4ir/node-osquery.svg?style=popout-square) ![s](https://img.shields.io/github/issues-raw/4ir/node-osquery.svg?style=popout-square) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2F4ir%2Fnode-osquery.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2F4ir%2Fnode-osquery?ref=badge_shield)
+![](https://img.shields.io/github/issues-pr/4ir/node-osquery.svg?style=popout-square)
 
 <p style="text-align: center">
 <img src="https://img.shields.io/bundlephobia/min/@4ir/osquery.svg?style=popout-square"> <img src="https://img.shields.io/github/repo-size/4ir/node-osquery.svg?style=popout-square"> <img src="https://img.shields.io/github/downloads/4ir/node-osquery/total.svg?style=popout-square"> <img src="https://img.shields.io/npm/dm/@4ir/osquery.svg?style=popout-square">
@@ -52,6 +53,9 @@ const query = new OSQuery(); // enter the path of osqueri otherwise it will use 
 ## Licensing
 
 This project is licensed under [Apache-2.0](https://github.com/4ir/node-osquery/blob/master/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2F4ir%2Fnode-osquery.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2F4ir%2Fnode-osquery?ref=badge_large)
 
 ## Contribution
 
